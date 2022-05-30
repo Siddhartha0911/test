@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "sal-dc5e"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "sal-dc5e"
+  template:
+    metadata:
+      labels:
+        app: "sal-dc5e"
+    spec:
+      containers:
+        - name: "sal-dc5e"
+          image: "asstg.azurecr.io/sal"
+          ports:
+          - containerPort: 88
